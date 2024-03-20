@@ -1,6 +1,6 @@
 # psw_generator
 
-This repository is copied from another repository, but I not cloned it, because there was my real name in the commit history. 
+This repository is copied from another repository, but I not cloned/forked it, because there was my real name in the commit history. 
 
 In this repository, there is a password-generator. 
 - The main.c files purpose is to let the user choose and to coordinate the other functions.
