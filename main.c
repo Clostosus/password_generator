@@ -7,7 +7,7 @@
 
 char ask_for_action(){
     char action;
-    printf("Enter an action(q=quit, g=generate_psw, r=rate_psw, s=save_psw):\n");
+    printf("Enter an action(q=quit, g=generate_psw, r=rate_psw, s=save_psw,p=print_saved):\n");
     action= (char) fgetc(stdin);
     fgetc(stdin);// remove newline character from stdin-buffer
     return action;
@@ -16,7 +16,7 @@ char ask_for_action(){
 int main() {
     unsigned length = 0;// The length of the password
     char password[MAX_PSW];
-    char user_choice; // q=quit; g=generate_psw ; r=rate_psw ; s= save_psw
+    char user_choice; // q=quit; g=generate_psw ; r=rate_psw ; s= save_psw; p=print_saved_psws
 
     do {
         user_choice=ask_for_action();
@@ -33,6 +33,9 @@ int main() {
                 break;
             case 's':// work in progress
                 if(action_save_psw(password,PSW_FILE)!=0){return 1;}
+                break;
+            case 'p':
+                if(read_psws_from_file()!=0){return 1;};
                 break;
             default:
                 return 1;
